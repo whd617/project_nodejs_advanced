@@ -11,7 +11,6 @@ productsRouter.post('', needSignIn, productsController.createOne);
 productsRouter.get('', productsController.readMany);
 // 상세 조회
 productsRouter.get('/:productId', productsController.readOne);
-
 // 수정
 productsRouter.put('/:productId', needSignIn, productsController.updateOne);
 // 삭제

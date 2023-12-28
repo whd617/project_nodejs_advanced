@@ -29,6 +29,6 @@ Authorization: Bearer {{accessToken}}
 }
 
 ### 상품 삭제
-DELETE {{host}}/3
+DELETE {{host}}/8
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
