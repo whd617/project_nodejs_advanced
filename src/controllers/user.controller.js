@@ -1,5 +1,5 @@
 export class UsersController {
-  readMyInfo = (req, res) => {
+  readMyInfo = (req, res, next) => {
     try {
       const me = res.locals.user;
       return res.status(200).json({
@@ -8,11 +8,7 @@ export class UsersController {
         data: me,
       });
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({
-        success: true,
-        message: '예상치 못한 에러가 발생하였습니다. 관리자에게 문의하세요',
-      });
+      next(error);
     }
   };
 }

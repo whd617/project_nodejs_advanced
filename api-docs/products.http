@@ -1,5 +1,5 @@
 @host = http://localhost:3000/api/products
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcwMzc1NjM1NCwiZXhwIjoxNzAzNzk5NTU0fQ.ZOVmXsWNxOsNTRYPs3TdZH6N4o_49yLZrgziGwqW6l4
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcwMzc1ODQ2NiwiZXhwIjoxNzAzODAxNjY2fQ.kRVhTqpfd5zVVHPclowtaUQwX1UUgm2a2x1NFpBDSMc
 
 ### 상품 생성
 POST {{host}}
@@ -7,7 +7,7 @@ Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-   "title": "가나 초콜렛",
+   "title": "삭제가 가능한 가득한 가나 초콜렛",
    "description": "맛있는 초콜렛"
 }
 
@@ -29,6 +29,6 @@ Authorization: Bearer {{accessToken}}
 }
 
 ### 상품 삭제
-DELETE {{host}}/1
+DELETE {{host}}/3
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}

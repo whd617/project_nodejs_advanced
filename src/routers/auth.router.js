@@ -12,7 +12,7 @@ const { Users } = db;
 const authRouter = Router();
 
 // 회원가입 /api/auth/siginup
-authRouter.post('/signup', async (req, res) => {
+authRouter.post('/signup', async (req, res, next) => {
   try {
     const { email, password, passwordConfirm, name } = req.body;
 
@@ -85,16 +85,12 @@ authRouter.post('/signup', async (req, res) => {
       data: newUser,
     });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      success: true,
-      message: '예상치 못한 에러가 발생하였습니다. 관리자에게 문의하세요',
-    });
+    next(error);
   }
 });
 
 // 로그인
-authRouter.post('/signin', async (req, res) => {
+authRouter.post('/signin', async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -140,11 +136,7 @@ authRouter.post('/signin', async (req, res) => {
       data: { accessToken },
     });
   } catch (error) {
-    console.error(error.message);
-    return res.status(500).json({
-      success: true,
-      message: '예상치 못한 에러가 발생하였습니다. 관리자에게 문의하세요',
-    });
+    next(error);
   }
 });
 
