@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
+    "dev": "nodemon src/app.js",
     "migrate:up": "npx sequelize db:migrate --config config/config.cjs",
     "migrate:down": "npx sequelize db:migrate:undo --config config/config.cjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jonghyeon Choi <whd617@naver.com>",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -22,7 +22,9 @@
     "sequelize": "^6.35.0"
   },
   "devDependencies": {
+    "eslint": "^8.55.0",
     "nodemon": "^3.0.1",
     "sequelize-cli": "^6.6.2"
-  }
+  },
+  "repository": "git@github.com:whd617/project_nodejs_advanced.git"
 }

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { JWT_ACCESS_TOKEN_SECRET } from '../constants/security.constant.js';
-import db from '../models/index.cjs';
+import db from '../../models/index.cjs';
 const { Users } = db;
 
 export const needSignIn = async (req, res, next) => {
@@ -15,7 +15,7 @@ export const needSignIn = async (req, res, next) => {
     }
 
     // JWT 기본적인 형태 -> Authorization: Bearer <token>
-    const [tokenType, accessToken] = authorizationHeader?.split(' ');
+    const [tokenType, accessToken] = authorizationHeader.split(' ');
     // 토큰형식이 일치하지 않는 경우
     if (tokenType !== 'Bearer') {
       return res.status(400).json({

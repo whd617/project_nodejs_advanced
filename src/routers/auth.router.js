@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import db from '../models/index.cjs';
+import db from '../../models/index.cjs';
 import bcrypt from 'bcrypt';
 import {
   PASSWORD_HASH_SALT_ROUNDS,

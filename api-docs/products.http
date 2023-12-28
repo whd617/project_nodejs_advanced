@@ -1,5 +1,5 @@
 @host = http://localhost:3000/api/products
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTcwMjAyMDMyNCwiZXhwIjoxNzAyMDYzNTI0fQ.hpQlzVM5hwoonidjsTl8zJEZ0V-cZktDVgXe_P4B7c8
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcwMzc1NjM1NCwiZXhwIjoxNzAzNzk5NTU0fQ.ZOVmXsWNxOsNTRYPs3TdZH6N4o_49yLZrgziGwqW6l4
 
 ### 상품 생성
 POST {{host}}
@@ -7,25 +7,25 @@ Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-   "title": "킨더조이",
-   "description": "장난감이 들어있는 초콜렛"
+   "title": "가나 초콜렛",
+   "description": "맛있는 초콜렛"
 }
 
 ### 상품 목록 조회
-GET {{host}}?sort=desc
+GET {{host}}?sort=DESC
 
 
 ### 상품 상세 조회
-GET {{host}}/1
+GET {{host}}/5
 
 ### 상품 수정
-PUT {{host}}/1
+PUT {{host}}/3
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-
-   "status": "SOLD_OUT1"
+   "title": "눅눅한 가나 초콜렛",
+   "status": "SOLD_OUT"
 }
 
 ### 상품 삭제
