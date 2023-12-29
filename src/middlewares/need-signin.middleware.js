@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { JWT_ACCESS_TOKEN_SECRET } from '../constants/security.constant.js';
-import db from '../../models/index.cjs';
-const { Users } = db;
+import { UsersRepository } from '../repositories/users.repository.js';
+
+const usersRepositroy = new UsersRepository();
 
 export const needSignIn = async (req, res, next) => {
   try {
@@ -37,7 +38,7 @@ export const needSignIn = async (req, res, next) => {
     console.log({ decodedPayload });
 
     // 일치하는 userId가 없는 경우
-    const user = (await Users.findByPk(userId)).toJSON();
+    const user = await usersRepositroy.readOneById(userId);
 
     if (!user) {
       return res.status(400).json({

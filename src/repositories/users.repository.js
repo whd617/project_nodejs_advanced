@@ -13,6 +13,11 @@ export class UsersRepository {
     return newUser;
   };
 
+  readOneById = async (id) => {
+    const user = await prisma.user.findUnique({ where: { id } });
+    return user;
+  };
+
   readOneByEmail = async (email) => {
     const user = await prisma.user.findUnique({ where: { email } });
 

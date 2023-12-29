@@ -16,6 +16,6 @@ POST {{host}}/signin
 Content-Type: application/json
 
 {
-   "email": "example7@example.com",
+   "email": "example6@example.com",
    "password": "eXampLeP@ss"
 }
