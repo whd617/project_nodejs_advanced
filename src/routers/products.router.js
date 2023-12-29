@@ -5,15 +5,14 @@ const productsRouter = Router();
 
 const productsController = new ProductsController();
 
-// 생성
-productsRouter.post('', needSignIn, productsController.createOne);
-// 목록 조회
-productsRouter.get('', productsController.readMany);
-// 상세 조회
-productsRouter.get('/:productId', productsController.readOne);
-// 수정
-productsRouter.put('/:productId', needSignIn, productsController.updateOne);
-// 삭제
-productsRouter.delete('/:productId', needSignIn, productsController.deleteOne);
+productsRouter.post('', needSignIn, productsController.createOne); // 생성
+
+productsRouter.get('', productsController.readMany); // 목록 조회
+
+productsRouter.get('/:productId', productsController.readOne); // 상세 조회
+
+productsRouter.put('/:productId', needSignIn, productsController.updateOne); // 수정
+
+productsRouter.delete('/:productId', needSignIn, productsController.deleteOne); // 삭제
 
 export { productsRouter };

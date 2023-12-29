@@ -67,4 +67,33 @@ export class AuthController {
       next(error);
     }
   };
+
+  signin = async (req, res, next) => {
+    try {
+      const { email, password } = req.body;
+
+      if (!email) {
+        return res.status(400).json({
+          success: false,
+          message: '이메일 입력이 필요합니다.',
+        });
+      }
+      if (!password) {
+        return res.status(400).json({
+          success: false,
+          message: '비밀번호 입력이 필요합니다.',
+        });
+      }
+
+      const accessToken = await this.authService.signin({ email, password });
+
+      return res.status(200).json({
+        success: true,
+        message: '로그인에 성공했습니다.',
+        data: { accessToken },
+      });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
